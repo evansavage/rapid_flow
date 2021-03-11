@@ -1,0 +1,32 @@
+{
+  "Burgin_Granite": {
+
+    "Burgin_NorthToGranite": {
+      "Burgin_GraniteToNorth": 0,
+      "Burgin_GraniteToWalterHannon": 838,
+      "Granite_BurginToHancock": 15,
+      "Granite_BurginToWhitwell": 156
+    },
+
+    "Burgin_WalterHannonToGranite": {
+      "Burgin_GraniteToNorth": 684,
+      "Burgin_GraniteToWalterHannon": 0,
+      "Granite_BurginToHancock": 256,
+      "Granite_BurginToWhitwell": 0
+    },
+
+    "Granite_HancockToBurgin": {
+      "Burgin_GraniteToNorth": 101,
+      "Burgin_GraniteToWalterHannon": 0,
+      "Granite_BurginToHancock": 0,
+      "Granite_BurginToWhitwell": 101
+    },
+
+    "Granite_WhitwellToBurgin": {
+      "Burgin_GraniteToNorth": 128,
+      "Burgin_GraniteToWalterHannon": 98,
+      "Granite_BurginToHancock": 164,
+      "Granite_BurginToWhitwell": 0
+    }
+  }
+}

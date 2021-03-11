@@ -1,0 +1,39 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ site.title }}</title>
+  <meta name="description" content="Music technologist, producer, AI researcher, web developer"/>
+
+  <link rel="icon" href="{{ site.baseurl }}/assets/img/2021favicon.png">
+  <link rel="preload" href="{{ '/assets/css/main.css' | relative_url }}" as="style" onload="this.rel='stylesheet'">
+  <meta property="og:image" content="{{ site.baseurl }}/assets/img/ra_cover.jpg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="evan-savage.com" />
+  <meta property="og:title" content="Evan Savage" />
+  <meta property="og:description" content="Music technologist, producer, AI researcher, web developer" />
+  <!-- <script rel="preload" src="{{ site.baseurl }}/assets/js/flickity.min.js"></script> -->
+  <link href="https://fonts.googleapis.com/css?family=Rubik&display=swap" rel="stylesheet">
+  <!-- <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script> -->
+  <link rel="preload" href="{{ '/assets/css/main.css' | relative_url }}" as="style" onload="this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}"></noscript>
+  <script type="text/javascript">
+   {% include loadCss.js %}
+  </script>
+  <!-- Google Analytics -->
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-XXXXX-Y', 'auto');
+  ga('send', 'pageview');
+  </script>
+  {% seo %}
+  <script type="text/javascript" src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+  <!-- End Google Analytics -->
+  <!-- <link rel="stylesheet" href="{{ '/assets/css/bootstrap.css' | relative_url }}"> -->
+  <!-- <script src="{{ '/assets/js/pixi.min.js' | relative_url }}"></script> -->
+</head>

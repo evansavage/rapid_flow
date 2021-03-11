@@ -1,0 +1,17 @@
+{
+  "Burgin_Granite": {
+    "approach_total": 2540,
+    "Burgin_NorthToGranite": {
+      "approach": 1009,
+    },
+    "Burgin_WalterHannonToGranite": {
+      "approach": 940,
+    },
+    "Granite_HancockToBurgin": {
+      "approach": 202,
+    },
+    "Granite_WhitwellToBurgin": {
+      "approach": 389,
+    },
+  }
+}

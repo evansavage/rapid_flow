@@ -1,0 +1,169 @@
+$nav-background-color: #2B2B2B;
+$intersection-hover-color: #689FC2;
+$intersection-wrapper-color: #497394;
+$approach-background-color: #636363;
+$approach-hover-color: #78A869;
+$approach-wrapper-color: #6A8465;
+$departure-background-color: #839575;
+
+$expand-all-hover: $intersection-wrapper-color;
+
+#nav-container {
+  width: 600px;
+  color: white;
+  background-color: $nav-background-color;
+  font-family: sans-serif;
+
+  .intersection-header {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: all 0.2s ease-in-out;
+    background-color: $nav-background-color;
+
+    &:hover {
+      background-color: $intersection-hover-color;
+    }
+    &.active {
+      background-color: $intersection-hover-color;
+    }
+
+    h2 {
+      margin-left: 25px;
+    }
+
+    span {
+      margin-left: auto;
+      margin-right: 25px;
+      font-size: 1.3rem;
+    }
+
+    .expand-all {
+      background-color: $nav-background-color;
+      color: white;
+      padding: 25px;
+      transition: all 0.2s ease-in-out;
+      margin-left: 0;
+      &:hover {
+        background-color: $expand-all-hover;
+      }
+    }
+  }
+  .intersection-wrapper {
+    background-color: $intersection-wrapper-color;
+    padding-left: 25px;
+    display: none;
+    .approach-header {
+      background-color: $approach-background-color;
+      display: flex;
+      align-items: center;
+      transition: all 0.2s ease-in-out;
+      cursor: pointer;
+      h3 {
+        margin-left: 20px;
+      }
+
+      span {
+        margin-left: auto;
+        margin-right: 20px;
+        font-size: 1.15rem;
+      }
+
+      .expand-approach {
+        // color: white;
+        padding: 21px;
+        transition: all 0.2s ease-in-out;
+        margin-left: 0;
+        width: 10px;
+        text-align: center;
+      }
+      .map-icon {
+        background-color: $approach-background-color;
+        height: 20px;
+        padding: 20px;
+        img {
+          width: 20px;
+          -webkit-filter: invert(100%); /* Safari/Chrome */
+          filter: invert(100%);
+        }
+      }
+      &:hover {
+        background-color: $approach-hover-color;
+      }
+      &.active {
+        background-color: $approach-hover-color;
+      }
+    }
+    .approach-wrapper {
+      background-color: $approach-wrapper-color;
+      padding-left: 20px;
+      display: none;
+      .departure-header {
+        display: flex;
+        align-items: center;
+        background-color: $departure-background-color;
+        h4 {
+          margin-left: 15px;
+        }
+        span {
+          margin-right: 15px;
+          width: 30px;
+          text-align: center;
+        }
+        span:first-of-type {
+          margin-left: auto;
+        }
+      }
+    }
+  }
+  h4 {
+    font-weight: 400;
+  }
+}
+
+#visualization-container {
+  width: 800px;
+}
+
+/* grids */
+.minor-grid {
+stroke: #cccccc;
+stroke-width: 0.1;
+shape-rendering: crispEdges;
+}
+
+.main-grid {
+color: #212121;
+stroke-width: 0.4;
+shape-rendering: crispEdges;
+}
+
+/* ticks */
+.axis line{
+stroke: #3f3f3f;
+shape-rendering: crispEdges;
+}
+
+/* contour */
+.axis path {
+stroke: #3f3f3f;
+shape-rendering: crispEdges;
+}
+
+/* rectangle */
+rect.rectangle {
+fill: $nav-background-color;
+}
+
+/* line */
+path.freeline {
+stroke: #d444ae;
+stroke-width: 6;
+fill: none;
+}
+
+/* radial shape */
+path.radial {
+stroke: none;
+fill: #60e59b;
+}
