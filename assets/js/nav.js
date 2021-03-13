@@ -3,21 +3,6 @@ $(document).ready(function() {
 
   var mapImageURL = 'assets/img/map.png'
 
-  function totalLevel(obj) {
-    var total = 0;
-    var k;
-    if (obj instanceof Object) {
-      for (k in obj) {
-        if (obj.hasOwnProperty(k)) {
-          total += totalLevel(obj[k]);
-        }
-      }
-    } else {
-      return obj
-    }
-    return total
-  }
-
   $.getJSON("assets/data/intersection_1.json", function (data) {
 
   }).fail(function() {
@@ -61,36 +46,46 @@ $(document).ready(function() {
         }
       }
     }
-  });;
+  });
+
   // Click on intersection header expands to approach chilren
   $('#nav-container').on('click', '.intersection-header', function() {
     $(this).next('.intersection-wrapper').slideToggle();
     $(this).toggleClass('active');
   });
 
-  var expandAllToggle = 0;
-
-  // Click on intersection expand all will expand everything, only go for expand right now
+  // Click on intersection expand all will expand everything
+  // - If the intersection wrapper is closed, expand all
+  // - o.w. collapse all
 
   $('#nav-container').on('click', '.intersection-header .expand-all', function(e) {
     var intersectionHeader = $(this).parents('.intersection-header');
     var intersectionWrapper = intersectionHeader.next('.intersection-wrapper');
+
+    // if Expand else Collapse
     if (!intersectionWrapper.is(':visible')) {
       intersectionHeader.next('.intersection-wrapper').slideToggle();
       intersectionHeader.addClass('active');
+      intersectionWrapper.find('.approach-header').each(function(i) {
+        if (!$(this).hasClass('active')) {
+          $(this).find('.expand-approach').text('-');
+          $(this).addClass('active');
+          $(this).next('.approach-wrapper').slideToggle();
+        }
+      });
+    } else {
+      intersectionHeader.next('.intersection-wrapper').slideToggle();
+      intersectionHeader.removeClass('active');
+      intersectionWrapper.find('.approach-header').each(function(i) {
+        if ($(this).hasClass('active')) {
+          $(this).find('.expand-approach').text('+');
+          $(this).removeClass('active');
+          $(this).next('.approach-wrapper').slideToggle();
+        }
+      });
+
     }
-    intersectionWrapper.find('.approach-header').each(function(i) {
-      if (!$(this).hasClass('active')) {
-        $(this).find('.expand-approach').text('-');
-        $(this).addClass('active');
-        $(this).next('.approach-wrapper').slideToggle();
-      }
-    })
-
-
     e.stopPropagation();
-    expandAllToggle += 1;
-    expandAllToggle %= 2;
   });
 
   $('#nav-container').on('click', '.approach-header', function() {
@@ -101,6 +96,11 @@ $(document).ready(function() {
     }
     $(this).next('.approach-wrapper').slideToggle();
     $(this).toggleClass('active');
+
+  });
+
+  $('#nav-container').on('click', '.approach-header .map-icon', function(e) {
+    e.stopPropagation();
 
   });
 

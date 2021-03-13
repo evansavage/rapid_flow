@@ -8,11 +8,32 @@ $departure-background-color: #839575;
 
 $expand-all-hover: $intersection-wrapper-color;
 
+html {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  padding: 8px;
+  margin: 0 auto;
+  max-width: 1440px;
+}
+
+#nav-wrapper {
+  height: 100%;
+  overflow-y: scroll;
+}
+
 #nav-container {
-  width: 600px;
+  display: inline-block;
+  width: 550px;
   color: white;
   background-color: $nav-background-color;
   font-family: sans-serif;
+  // max-height: 100%;
+  // overflow-y: scroll;
 
   .intersection-header {
     cursor: pointer;
@@ -122,7 +143,8 @@ $expand-all-hover: $intersection-wrapper-color;
 }
 
 #visualization-container {
-  width: 800px;
+  flex: 1;
+  max-height: 100vh;
 }
 
 /* grids */
@@ -151,7 +173,7 @@ shape-rendering: crispEdges;
 }
 
 /* rectangle */
-rect.rectangle {
+rect.streets {
 fill: $nav-background-color;
 }
 
@@ -162,8 +184,16 @@ stroke-width: 6;
 fill: none;
 }
 
+svg text {
+  font-weight: 300;
+}
+
 /* radial shape */
 path.radial {
 stroke: none;
 fill: #60e59b;
+}
+
+#visualization-container svg svg {
+  overflow: visible;
 }
