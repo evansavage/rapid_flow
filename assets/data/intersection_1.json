@@ -29,6 +29,36 @@
       "Granite_Whitwell": 0
     }
   },
+  "Burgin_Granite": {
+
+    "North_Burgin": {
+      "Burgin_North": 0,
+      "Burgin_WalterHannon": 838,
+      "Burgin_Hancock": 15,
+      "Burgin_Whitwell": 156
+    },
+
+    "WalterHannon_Burgin": {
+      "Burgin_North": 684,
+      "Burgin_WalterHannon": 0,
+      "Burgin_Hancock": 256,
+      "Burgin_Whitwell": 0
+    },
+
+    "Hancock_Granite": {
+      "Granite_North": 101,
+      "Granite_WalterHannon": 0,
+      "Granite_Hancock": 0,
+      "Granite_Whitwell": 101
+    },
+
+    "Whitwell_Granite": {
+      "Granite_North": 128,
+      "Granite_WalterHannon": 98,
+      "Granite_Hancock": 164,
+      "Granite_Whitwell": 0
+    }
+  },
   "Hazel_a50th": {
 
     "Larchwood_Hazel": {

@@ -14,7 +14,8 @@ $(document).ready(function() {
            //this is to zoom out
            //.attr("viewBox", "-20 -20 1600 1600")
            .style("padding", 5)
-           .style("margin", 5);
+           .style("margin", 5)
+           .attr('id', 'svg-canvas')
 
   //----------------CANVAS PREPARATION----------------//
   //PREPARE SCALES
@@ -136,9 +137,11 @@ $(document).ready(function() {
     var dep1mult = app1mult;
 
     $('#nav-container').on('click', '.intersection-header', function() {
-      var i_key = $(this).attr("class").split(/\s+/)[1];
-      //TITLE
       var clean = svg.selectAll('*').remove();
+      var i_key = $(this).attr("class").split(/\s+/)[1];
+      console.log('I_key', i_key);
+      //TITLE
+
 
       var title = svg.append('text')
         .attr('x', function(d){
@@ -200,6 +203,7 @@ $(document).ready(function() {
       }
 
       var depResize = {};
+
       // Loop through each approach in intersection
 
       for (a_key in data[i_key]) {
@@ -276,7 +280,7 @@ $(document).ready(function() {
           .attr('width', appDim)
           .attr('height', appDim)
           .attr('class', `approach-in ${a_key}`)
-          .style('opacity', 0)
+          // .style('opacity', 0)
           .append('path')
           // .attr('transform', `scale(${exp}) translate(${(1 - exp)*appDim} ${(1-exp)*appDim})`)
           .attr('d', arrow_path)
@@ -330,10 +334,15 @@ $(document).ready(function() {
         }
       }
       console.log(streetCounter);
+      console.log(depResize);
+
+      // visualizeAppDep()
+
       $('#nav-container').on('click', '.approach-header .map-icon', function() {
         var a_key = $(this).parents('.approach-header').attr("class").split(/\s+/)[1];
         var i_key = $(this).parents('.intersection-wrapper').attr("class").split(/\s+/)[1];
         console.log(i_key, a_key);
+
         $('.approach-in').each(function() {
           if ($(this).css('opacity') == 1 && !$(this).hasClass(a_key)) {
             $(this).animate({'opacity': 0}, 400);
@@ -342,17 +351,20 @@ $(document).ready(function() {
         // console.log(a_key.split('_')[0])
         for (d_key in data[i_key][a_key]) {
           var depAmt = data[i_key][a_key][d_key];
-          var x_n = d3.select(`.depart-out.${d_key.split('_')[1]}`).attr(`x`)
-          var y_n = d3.select(`.depart-out.${d_key.split('_')[1]}`).attr(`y`)
-          //
-          console.log(depResize[a_key.split('_')[0]]['x'], depResize[a_key.split('_')[0]]['y'])
-          d3.select(`.depart-out.${d_key.split('_')[1]}`)
-            .transition().duration(400)
+          console.log('Dkey', d_key.split('_')[1]);
+          $('#svg-canvas').find(`.depart-out.${d_key.split('_')[1]}`)
             .attr('x', depResize[d_key.split('_')[1]]['x'] - depResize[a_key.split('_')[0]][d_key]['w']/2)
             .attr('y', depResize[d_key.split('_')[1]]['y'] - depResize[a_key.split('_')[0]][d_key]['h']/2)
             .attr('width', depResize[a_key.split('_')[0]][d_key]['w'])
             .attr('height', depResize[a_key.split('_')[0]][d_key]['h'])
-            .style('opacity', (depResize[a_key.split('_')[0]][d_key]['w'] == minDep) ? 0 : 1)
+            .css({'opacity': (depResize[a_key.split('_')[0]][d_key]['w'] == minDep) ? 0 : 1})
+          // d3.select(`.depart-out.${d_key.split('_')[1]}`)
+          //   .transition().duration(400)
+          //   .attr('x', depResize[d_key.split('_')[1]]['x'] - depResize[a_key.split('_')[0]][d_key]['w']/2)
+          //   .attr('y', depResize[d_key.split('_')[1]]['y'] - depResize[a_key.split('_')[0]][d_key]['h']/2)
+          //   .attr('width', depResize[a_key.split('_')[0]][d_key]['w'])
+          //   .attr('height', depResize[a_key.split('_')[0]][d_key]['h'])
+          //   .style('opacity', (depResize[a_key.split('_')[0]][d_key]['w'] == minDep) ? 0 : 1)
         }
         $(`.approach-in.${a_key}`).animate({'opacity': 1}, 400);
       })
