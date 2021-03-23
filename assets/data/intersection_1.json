@@ -29,64 +29,64 @@
       "Granite_Whitwell": 0
     }
   },
-  "Burgin_Granite": {
+  "Hazel_Osage": {
 
-    "North_Burgin": {
-      "Burgin_North": 0,
-      "Burgin_WalterHannon": 838,
-      "Burgin_Hancock": 15,
-      "Burgin_Whitwell": 156
+    "Larchwood_Osage": {
+      "Osage_Larchwood": 30,
+      "Osage_Cedar": 40,
+      "Osage_Pine": 2,
+      "Osage_Walnut": 160
     },
 
-    "WalterHannon_Burgin": {
-      "Burgin_North": 684,
-      "Burgin_WalterHannon": 0,
-      "Burgin_Hancock": 256,
-      "Burgin_Whitwell": 0
+    "Cedar_Osage": {
+      "Osage_Larchwood": 50,
+      "Osage_Cedar": 204,
+      "Osage_Pine": 67,
+      "Osage_Walnut": 5
     },
 
-    "Hancock_Granite": {
-      "Granite_North": 101,
-      "Granite_WalterHannon": 0,
-      "Granite_Hancock": 0,
-      "Granite_Whitwell": 101
-    },
-
-    "Whitwell_Granite": {
-      "Granite_North": 128,
-      "Granite_WalterHannon": 98,
-      "Granite_Hancock": 164,
-      "Granite_Whitwell": 0
-    }
-  },
-  "Hazel_a50th": {
-
-    "Larchwood_Hazel": {
+    "Pine_Hazel": {
       "Hazel_Larchwood": 10,
       "Hazel_Cedar": 70,
-      "Hazel_a49th": 15,
-      "Hazel_a51st": 156
+      "Hazel_Pine": 15,
+      "Hazel_Walnut": 156
     },
 
-    "Cedar_Hazel": {
+    "Walnut_Hazel": {
       "Hazel_Larchwood": 180,
       "Hazel_Cedar": 5,
-      "Hazel_a49th": 45,
-      "Hazel_a51st": 20
+      "Hazel_Pine": 45,
+      "Hazel_Walnut": 20
+    }
+  },
+  "Chestnut_JFK": {
+
+    "Spruce_Chestnut": {
+      "Chestnut_Spruce": 2,
+      "Chestnut_Waverly": 3163,
+      "Chestnut_Market": 2104,
+      "Chestnut_Ranstead": 1120
     },
 
-    "a49th_a50th": {
-      "a50th_Larchwood": 30,
-      "a50th_Cedar": 40,
-      "a50th_a49th": 2,
-      "a50th_a51st": 160
+    "Waverly_Chestnut": {
+      "Chestnut_Spruce": 2040,
+      "Chestnut_Waverly": 0,
+      "Chestnut_Market": 300,
+      "Chestnut_Ranstead": 3456
     },
 
-    "a51st_a50th": {
-      "a50th_Larchwood": 50,
-      "a50th_Cedar": 204,
-      "a50th_a49th": 67,
-      "a50th_a51st": 5
+    "Market_JFK": {
+      "JFK_Spruce": 900,
+      "JFK_Waverly": 0,
+      "JFK_Market": 0,
+      "JFK_Ranstead": 340
+    },
+
+    "Ranstead_JFK": {
+      "JFK_Spruce": 892,
+      "JFK_Waverly": 2578,
+      "JFK_Market": 1204,
+      "JFK_Ranstead": 5
     }
   }
 }

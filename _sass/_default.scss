@@ -5,6 +5,7 @@ $approach-background-color: #636363;
 $approach-hover-color: #78A869;
 $approach-wrapper-color: #6A8465;
 $departure-background-color: #839575;
+$visualization-active-color: #c2b368;
 
 $expand-all-hover: $intersection-wrapper-color;
 
@@ -32,8 +33,6 @@ body {
   color: white;
   background-color: $nav-background-color;
   font-family: sans-serif;
-  // max-height: 100%;
-  // overflow-y: scroll;
 
   .intersection-header {
     cursor: pointer;
@@ -102,6 +101,10 @@ body {
         background-color: $approach-background-color;
         height: 20px;
         padding: 20px;
+        transition: all 0.2s ease-in-out;
+        &.active {
+          background-color: $visualization-active-color;
+        }
         img {
           width: 20px;
           -webkit-filter: invert(100%); /* Safari/Chrome */
@@ -145,6 +148,7 @@ body {
 #visualization-container {
   flex: 1;
   max-height: 100vh;
+  position: relative;
 }
 
 /* grids */
@@ -194,6 +198,47 @@ stroke: none;
 fill: #60e59b;
 }
 
-#visualization-container svg svg {
-  overflow: visible;
+
+
+#svg-canvas {
+  max-height: calc(100% - 16px);
+  svg {
+    overflow: visible;
+    transition: all 0.2s ease-in;
+  }
+}
+
+#vis-buttons {
+  display: flex;
+  border: 1px solid grey;
+  border-radius: 4px;
+  position: absolute;
+  font-family: sans-serif;
+  top: 90px;
+  left: 64px;
+  font-size: 1.3rem;
+  opacity: 0;
+
+  button {
+    border: none;
+    background-color: transparent;
+    font-size: 1rem;
+    padding: 5px 18px;
+    margin: 0;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    &:first-child {
+      border-right: 1px solid grey;
+    }
+    &:focus {
+      outline: none;
+    }
+    &.active {
+      background-color: grey;
+      color: white;
+    }
+
+  }
+
+
 }
