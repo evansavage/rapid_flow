@@ -30,7 +30,7 @@ $(document).ready(function() {
         var approachTotalValue = totalLevel(data[i_key][a_key]);
         var approachTotal = $("<span>").appendTo(approachHeader).text(approachTotalValue).addClass('app-total');
         var approachExpand = $("<a>").appendTo(approachHeader).text('+').addClass('expand-approach');
-        var approachMap = $(`<a><img src=${mapImageURL}/></a>`).appendTo(approachHeader).addClass('map-icon');
+        var approachMap = $(`<a><img src=${mapImageURL} /></a>`).appendTo(approachHeader).addClass('map-icon');
 
         // Add sibling approah wrapper to contain the approach's departures
         var approachWrapper = $("<div>").appendTo(intersectionWrapper).addClass(`approach-wrapper ${a_key}`);
