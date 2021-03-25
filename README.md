@@ -1,0 +1,9 @@
+## Evan Savage - Rapid Flow Technologies: Front End Take Home
+
+Here is my submission for the Rapid Flow Technologies: Front End Take Home assessment. I developed the interface and the visualization using the static site builder, Jekyll, which was used to get off the ground running quickly. Jekyll continually updates a static build folder (named here **final_static_build**), which is included along side the development folder (**jekyll_development**). The JS is not minified, but the CSS is, and I wrote it originally in SASS inside the **jekyll_development/_sass** folder. Here are the instructions for how to view my submission:
+
+The folder **final_static_build** is the static build output from Jekyll, which can be run using any simple HTTP server. I tested it with Node's *http-server* which can be installed from here if you already have node and npm installed: https://www.npmjs.com/package/http-server. With *http-server* installed, simply run it from the terminal within the **final_static_build** folder and the site will be available at http://localhost:8080. Additionally, Python 2's *SimpleHTTPServer* and Python 3's equivalent *http.server* also work, though they do not serve image files, so the map icons just appear as placeholders instead. Just as the previous node option, go to the **final_static_build** build folder to start. If using Python 2, run 'python -m SimpleHTTPServer 8080' or for Python 3, run 'python -m http.server 8080', making the site available at http://localhost:8080.
+
+**jekyll_development** is the folder that I used to develop the assignment, and it can be run if you have an installation of Ruby and follow the instructions on Jekyll's website here: https://jekyllrb.com/docs/ for your particular OS. I included it so you would be able to see my original SASS files and not just the minified CSS.
+
+Please let me know if you have any questions!
